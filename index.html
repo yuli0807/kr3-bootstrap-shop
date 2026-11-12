@@ -3,85 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — Bootstrap Shop</title>
+  <title>Главная — Muse Studio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
-  <header class="bg-primary text-white py-4">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top shadow-sm">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-8">
-          <h1 class="h3 mb-1">Bootstrap Shop</h1>
-          <p class="mb-0 opacity-75">
-            Учебный интернет-магазин на Bootstrap
-          </p>
+      
+      <!-- ЛОГОТИП (Иконка + Текст) -->
+      <a href="index.html" class="brand-logo-link d-flex align-items-center gap-3 text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
+        <div>
+          <span class="brand-title text-white d-block" style="font-size: 1.3rem; font-weight: 800; letter-spacing: 2px;">Muse Studio</span>
+          <span class="brand-slogan text-white d-block" style="font-size: 0.75rem;">Твоя история в каждом кадре</span>
         </div>
+      </a>
 
-        <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
-          <span class="badge bg-light text-primary">
-            КР №2
-          </span>
-        </div>
+      <!-- Кнопка-бургер для мобильных -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Меню -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="studios.html">Залы</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Услуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="photographers.html">Фотографы</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Полезное</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">О нас</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+              <!-- ДОБАВЛЕНА ОБРАТНАЯ СВЯЗЬ -->
+              <li><a class="dropdown-item" href="index.html#faq">Частые вопросы</a></li>
+              <li><a class="dropdown-item" href="index.html#reviews">Отзывы клиентов</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-light btn-sm text-dark fw-bold px-3" href="order.html">Запись на съемку</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </header>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar"
-      aria-expanded="false"
-      aria-label="Переключить навигацию"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Главная</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="catalog.html">Каталог</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Товар</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="order.html">Заявка</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Дополнительно
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
-            <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-            <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
   <main>
     
@@ -89,54 +68,50 @@
       <div class="row align-items-center g-4">
         <div class="col-12 col-lg-6">
           <h2 class="display-5 fw-bold">
-            Учебный каталог товаров на Bootstrap
+            Сохраним ваши лучшие моменты
           </h2>
           <p class="lead text-muted">
-            Проект демонстрирует использование Bootstrap-сетки,
-            адаптивных колонок и базовых utility-классов.
+            Профессиональная фотосъемка в студии и на выезде. 
+            Свадебные, семейные и портретные фотосессии.
           </p>
           <a class="btn btn-primary btn-lg" href="catalog.html">
-            Перейти в каталог
+            Выбрать услугу
           </a>
         </div>
 
         <div class="col-12 col-lg-6">
-          <div class="placeholder-box p-5 bg-light border rounded text-center">
-            <p class="mb-0 text-muted">
-              Здесь может быть изображение, баннер или промо-блок.
-            </p>
-          </div>
+          <img src="images/main-photo.jpg" class="img-fluid rounded shadow-sm" alt="Фотосессия в студии Muse">
         </div>
       </div>
     </section>
 
     <section class="container my-5">
-      <h2 class="text-center mb-4">Преимущества проекта</h2>
+      <h2 class="mb-4">Преимущества студии</h2>
 
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Bootstrap-сетка</h3>
+            <h3 class="h5">Профессиональный свет</h3>
             <p class="mb-0 text-muted">
-              Страница построена на 12-колоночной системе Bootstrap.
+              Используем студийное оборудование премиум-класса.
             </p>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Адаптивность</h3>
+            <h3 class="h5">Опытные фотографы</h3>
             <p class="mb-0 text-muted">
-              Колонки меняют ширину в зависимости от размера экрана.
+               Наши специалисты помогут вам раскрепоститься и подскажут удачные ракурсы.
             </p>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Готовая база</h3>
+            <h3 class="h5">Быстрая обработка</h3>
             <p class="mb-0 text-muted">
-              Проект подготовлен к добавлению карточек, форм и модальных окон.
+              Вы получите обработанные фотографии не позднее, чем через 7 дней после съемки.
             </p>
           </div>
         </div>
@@ -145,21 +120,21 @@
 
     <section class="container my-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Популярные товары</h2>
+        <h2 class="mb-0">Популярные услуги</h2>
         <a class="btn btn-outline-primary" href="catalog.html">
-          Все товары
+          Все услуги
         </a>
       </div>
 
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
-            <span class="badge bg-success mb-3">Новинка</span>
-            <h3 class="h5">Товар 1</h3>
+            <span class="badge bg-success mb-3">Хит</span>
+            <h3 class="h5">Свадебная съемка</h3>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Репортажная съемка вашего особенного дня с двумя фотографами.
             </p>
-            <p class="fw-bold mb-3">1000 руб.</p>
+            <p class="fw-bold mb-3">20000 руб.</p>
             <a class="btn btn-primary" href="product.html">
               Подробнее
             </a>
@@ -169,11 +144,11 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
             <span class="badge bg-warning text-dark mb-3">Хит</span>
-            <h3 class="h5">Товар 2</h3>
+            <h3 class="h5">Тематическая съемка</h3>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Стилизованные съемки к праздникам.
             </p>
-            <p class="fw-bold mb-3">1500 руб.</p>
+            <p class="fw-bold mb-3">9500 руб.</p>
             <a class="btn btn-primary" href="product.html">
               Подробнее
             </a>
@@ -183,11 +158,11 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
             <span class="badge bg-danger mb-3">Скидка</span>
-            <h3 class="h5">Товар 3</h3>
+            <h3 class="h5">Фотосессия беременности</h3>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Нежная съемка для будущих мам.
             </p>
-            <p class="fw-bold mb-3">2000 руб.</p>
+            <p class="fw-bold mb-3">9000 руб.</p>
             <a class="btn btn-primary" href="product.html">
               Подробнее
             </a>
@@ -196,28 +171,348 @@
       </div>
     </section>
 
+    <!-- ГАЛЕРЕЯ РАБОТ -->
+    <section class="container my-5 py-4">
+      <div class="text-center mb-4">
+        <h2 class="h2 fw-bold">Наши работы</h2>
+        <p class="text-muted">Лучшие кадры, снятые нами</p>
+      </div>
+      
+      <div id="mainGallery" class="carousel slide shadow rounded" data-bs-ride="carousel">
+        <!-- Точки-индикаторы внизу (теперь их 5) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#mainGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#mainGallery" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#mainGallery" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#mainGallery" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#mainGallery" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        
+        <!-- Сами картинки (5 штук) -->
+        <div class="carousel-inner rounded">
+          <!-- 1 -->
+          <div class="carousel-item active">
+            <img src="images/gallery-1.jpg" class="d-block w-100" alt="Свадебная съемка" style="height: 550px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Свадебная история</h5>
+              <p>Искренние эмоции вашего главного дня</p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="carousel-item">
+            <img src="images/gallery-2.jpg" class="d-block w-100" alt="Семейная фотосессия" style="height: 550px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Семейный портрет</h5>
+              <p>Уютная студийная съемка</p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="carousel-item">
+            <img src="images/gallery-3.jpg" class="d-block w-100" alt="Love Story" style="height: 550px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Love Story</h5>
+              <p>Романтическая прогулка по городу</p>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="carousel-item">
+            <img src="images/gallery-4.jpg" class="d-block w-100" alt="Детская фотосессия" style="height: 550px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Детская съемка</h5>
+              <p>Самые искренние улыбки</p>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="carousel-item">
+            <img src="images/gallery-5.jpg" class="d-block w-100" alt="Портретная съемка" style="height: 550px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Портрет</h5>
+              <p>Раскрываем вашу индивидуальность</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Стрелки для перелистывания -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainGallery" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainGallery" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="container my-5" id="reviews">
+      <h2 class="mb-4">Отзывы клиентов</h2>
+      
+      <!-- Контейнер с горизонтальной прокруткой -->
+      <div class="d-flex overflow-auto gap-4 pb-4 reviews-scroll">
+        
+        <!-- 1 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★★</p>
+            <p class="card-text fst-italic">«Очень переживала перед съемкой, так как в жизни не фотогенична. Но фотограф создал такую невероятную и расслабленную атмосферу, что я даже не заметила, как пролетели два часа! Снимки получились максимально естественными и шикарными. Огромное спасибо студии!»</p>
+            <p class="fw-bold mt-3 mb-0">— Елена В.</p>
+          </div>
+        </div>
+        
+        <!-- 2 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★★</p>
+            <p class="card-text fst-italic">«Заказывали свадебную съемку у Ивана. Это настоящий профессионал! Он умудрялся быть незаметным, но при этом поймал абсолютно все: и слезы радости родителей, и наш смех, и нелепые случайные моменты. Фото отдали быстро, смотрели всей семьей со слезами на глазах.»</p>
+            <p class="fw-bold mt-3 mb-0">— Дмитрий и Анна</p>
+          </div>
+        </div>
+        
+        <!-- 3 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★☆</p>
+            <p class="card-text fst-italic">«Отличная студия с огромными окнами и невероятным количеством естественного света. Единственное, пришлось подождать на пару дней дольше заявленного срока обработки фото. Но результат того стоил, ретушь на высшем уровне, кожа выглядит идеально.»</p>
+            <p class="fw-bold mt-3 mb-0">— Мария К.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★★</p>
+            <p class="card-text fst-italic">«Делала фотосессию беременности. В студии очень трепетный и бережный подход. Помогли подобрать платье из их гардероба, подсказали правильные и удобные позы. Чувствовала себя настоящей богиней! Фотографии волшебные, буду пересматривать их всю жизнь.»</p>
+            <p class="fw-bold mt-3 mb-0">— Ольга С.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★★</p>
+            <p class="card-text fst-italic">«Заказывал съемку для личного бренда в зале "Бегер". Нужны были строгие, но живые фото для соцсетей. Свет и ракурсы подобраны идеально, на ретушь даже не пришлось ничего просить исправлять. Клиенты пишут комплименты новому оформлению профиля!»</p>
+            <p class="fw-bold mt-3 mb-0">— Алексей П.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★☆</p>
+            <p class="card-text fst-italic">«Бронировали зал "Риф" на выходные. Красивый интерьер, много фактурных стен и отличное световое оборудование. В выходные, конечно, настоящий аншлаг, лучше бронировать за пару недель вперед. В целом, остались очень довольны качеством залов.»</p>
+            <p class="fw-bold mt-3 mb-0">— Виктория Л.</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card border-0 shadow-sm bg-white review-card">
+          <div class="card-body">
+            <p class="text-warning mb-2">★★★★★</p>
+            <p class="card-text fst-italic">«Фотосессия с двумя детьми (3 и 5 лет) — это то еще испытание! Но наш фотограф проявил чудеса терпения. Дети бегали, смеялись, а в итоге на фото просто невероятные эмоции. Спасибо за живые кадры, а не за постановочные улыбки в камеру!»</p>
+            <p class="fw-bold mt-3 mb-0">— Семья Смирновых</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container my-5" id="faq">
+      <h2 class="mb-4">Частые вопросы</h2>
+
+      <div class="accordion" id="faqAccordion">
+        
+        <!-- 1 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+              Как записаться на фотосессию?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Выберите подходящую услугу в разделе «Услуги» или понравившийся зал в разделе «Залы». Нажмите кнопку «Записаться» или заполните форму на странице «Запись на съемку». Наш менеджер свяжется с вами в течение 15 минут для подтверждения даты, времени и обсуждения деталей.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Сколько времени занимает обработка фотографий?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Стандартный срок обработки — от 3 до 7 дней в зависимости от выбранного пакета услуг. Мы вручную отбираем лучшие кадры, делаем цветокоррекцию и качественную ретушь, поэтому просим немного подождать. Если фотографии нужны срочно, у нас есть услуга экспресс-обработки за 24 часа.
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Входит ли макияж и аренда платьев в стоимость?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Базовые пакеты включают работу фотографа и аренду зала. Услуги визажиста, стилиста и прокат образов оплачиваются отдельно. Вы можете воспользоваться услугами наших проверенных партнеров или прийти со своим макияжем и одеждой. В студии есть оборудованная гримерная комната с большим зеркалом и хорошим светом.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              Можно ли получить исходные (необработанные) фотографии?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Мы передаем клиентам только тщательно отобранные и отретушированные фотографии в формате JPEG высокого качества. Исходники (RAW-файлы) мы не отдаем по нескольким причинам: во-первых, мы несем ответственность за конечный результат и хотим, чтобы вы видели только идеальные кадры. Во-вторых, исходные файлы весят очень много и требуют специальных программ для просмотра. Однако, если вы хотите получить *все* удачные кадры без глубокой ретуши (только с цветокоррекцией), это можно обсудить с менеджером при бронировании.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+              Что делать, если планы изменились и я не могу прийти?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Мы понимаем, что жизненные ситуации бывают разными. Если вам нужно перенести съемку, пожалуйста, сообщите нам об этом не позднее чем за 48 часов до назначенного времени. В этом случае мы бесплатно перенесем вашу запись на другую удобную дату, и предоплата сохранится. При отмене менее чем за сутки или неявке, к сожалению, предоплата не возвращается, так как это время уже забронировано под вас и наши специалисты отказали другим клиентам.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
-
-  <footer class="bg-dark text-white py-4 mt-5">
+  
+  <footer class="bg-dark text-white py-5 mt-5">
     <div class="container">
-      <div class="row align-items-center g-3">
-        <div class="col-12 col-md-6">
-          <p class="mb-0">
-            &copy; 2026 Bootstrap Shop. Учебный проект.
-          </p>
+      
+      <div class="row align-items-stretch g-4">
+        
+        <!-- 1. ЛЕВАЯ КОЛОНКА: Логотип и Права -->
+        <div class="col-12 col-lg-4 d-flex flex-column justify-content-between mb-4 mb-lg-0">
+          <a href="index.html" class="brand-logo-link d-inline-flex align-items-center gap-2 text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+              <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+              <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+            </svg>
+            <div>
+              <span class="brand-title text-white d-block" style="font-size: 1.2rem; font-weight: 800; letter-spacing: 2px;">Muse Studio</span>
+              <span class="brand-slogan text-white d-block" style="font-size: 0.75rem;">Твоя история в каждом кадре</span>
+            </div>
+          </a>
+          
+          <div class="text-white-50 small mt-4 mt-lg-0">
+            &copy; 2026 Muse Studio. Все права защищены.
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 text-md-end">
-          <a class="text-white text-decoration-none me-3" href="catalog.html">
-            Каталог
-          </a>
-          <a class="text-white text-decoration-none" href="order.html">
-            Заявка
-          </a>
+        <!-- 2. ЦЕНТРАЛЬНАЯ КОЛОНКА: Навигация и Кнопка -->
+        <div class="col-12 col-lg-3 text-center d-flex flex-column justify-content-end align-items-center mb-4 mb-lg-0">
+          <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 small mb-5">
+            <a href="studios.html" class="text-white-50 text-decoration-none">Залы</a>
+            <a href="catalog.html" class="text-white-50 text-decoration-none">Услуги</a>
+            <a href="photographers.html" class="text-white-50 text-decoration-none">Фотографы</a>
+            <a href="about.html" class="text-white-50 text-decoration-none">О нас</a>
+          </div>
+          <a href="order.html" class="btn btn-light btn-sm text-dark fw-bold px-3 py-1" style="font-size: 0.85rem;">Записаться на съемку</a>
         </div>
+
+        <!-- 3. ПРАВАЯ КОЛОНКА: Контакты и Соцсети -->
+        <div class="col-12 col-lg-4 offset-lg-1">
+          <h5 class="text-white fw-bold mb-3 mt-1">Контакты</h5>
+          <ul class="list-unstyled text-white-50 small mb-4 d-flex flex-column gap-2">
+            <li><strong>📍 Адрес:</strong> г. Москва, ул. Арбат, д. 10</li>
+            <li><strong>📞 Телефон:</strong> <a href="tel:+79067874323" class="text-white-50 text-decoration-none">+7 (906) 787-43-23</a></li>
+            <li><strong>⏰ Звонки принимаем:</strong> Ежедневно с 10:00 до 21:00</li>
+            <li><strong>✉️ E-mail:</strong> <a href="mailto:info@musestudio.ru" class="text-white-50 text-decoration-none">info@musestudio.ru</a></li>
+          </ul>
+
+          <div class="d-flex gap-3">
+            <a href="#" class="social-icon" aria-label="ВКонтакте">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M15.684 1.354H1.316C.59 1.354 0 1.943 0 2.67v10.66c0 .727.59 1.316 1.316 1.316h14.368c.726 0 1.316-.59 1.316-1.316V2.67c0-.727-.59-1.316-1.316-1.316zM8.353 11.6c-2.663 0-4.724-1.644-4.824-4.364h1.435c.1 2.043 1.144 2.91 1.982 3.09V7.236h1.356v1.772c.83-.09 1.703-.97 1.996-1.772h1.356c-.227 1.148-1.175 2.026-1.853 2.317.678.228 1.727.992 2.133 2.047h-1.492c-.316-.813-1.104-1.444-2.14-1.444z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Telegram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.81-5.239-.002-.062-.006-.265-.141-.338-.135-.073-.341-.044-.478-.024z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </footer>
+
+  <!-- Модальное окно Обратной связи -->
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Связаться с нами</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted mb-4">Остались вопросы? Напишите нам, и мы обязательно ответим вам в ближайшее время.</p>
+          <form>
+            <div class="mb-3">
+              <label for="fbName" class="form-label">Ваше имя</label>
+              <input type="text" class="form-control" id="fbName" placeholder="Как к вам обращаться?" required>
+            </div>
+            <div class="mb-3">
+              <label for="fbContact" class="form-label">Телефон или E-mail</label>
+              <input type="text" class="form-control" id="fbContact" placeholder="Как с вами связаться?" required>
+            </div>
+            <div class="mb-3">
+              <label for="fbMessage" class="form-label">Ваш вопрос</label>
+              <textarea class="form-control" id="fbMessage" rows="3" placeholder="Напишите ваш вопрос здесь..." required></textarea>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="fbAgree" required>
+              <label class="form-check-label" for="fbAgree">
+                Согласен на обработку персональных данных
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+          <button type="button" class="btn btn-primary">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#top" id="backToTop" title="Вернуться в начало">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+      <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+    </svg>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
