@@ -1,16 +1,214 @@
-body {
-  min-height: 100vh;
+body { 
+  min-height: 100vh; 
+}
+.placeholder-box { 
+  min-height: 240px; 
+}
+.placeholder-image { 
+  min-height: 320px; 
 }
 
-.placeholder-box {
-  min-height: 240px;
+/* Черная шапка (Hero-блок) */
+.bg-primary { 
+  background-color: #111111 !important; 
 }
 
-.placeholder-image {
-  min-height: 320px;
+/* Черные кнопки */
+.btn-primary { 
+  background-color: #111111 !important; 
+  border-color: #111111 !important; 
+  color: #ffffff !important;
+}
+.btn-primary:hover { 
+  background-color: #333333 !important; 
+  border-color: #333333 !important; 
 }
 
+/* Ссылки и контурные кнопки */
+.text-primary { color: #111111 !important; }
+.btn-outline-primary { color: #111111 !important; border-color: #111111 !important; }
+.btn-outline-primary:hover { background-color: #111111 !important; color: #ffffff !important; }
+
+/* Бейджи (Хит, Новинка, Скидка) тоже делаем черными для единого стиля */
+.bg-success, .bg-warning, .bg-danger { 
+  background-color: #111111 !important; 
+  color: #ffffff !important; 
+}
+
+/* Картинки (оставил только рабочую высоту 350px) */
 .card-img-top {
-  height: 180px;
+  height: 350px;             
   object-fit: cover;
+  object-position: center top; 
+}
+
+/* =========================================
+   Горизонтальная прокрутка отзывов
+   ========================================= */
+.reviews-scroll {
+  scroll-snap-type: x mandatory; 
+}
+
+.review-card {
+  min-width: 320px; 
+  max-width: 320px;
+  scroll-snap-align: start; 
+}
+
+/* Стилизация полосы прокрутки */
+.reviews-scroll::-webkit-scrollbar {
+  height: 6px; 
+}
+.reviews-scroll::-webkit-scrollbar-track {
+  background: #e9ecef; 
+  border-radius: 10px;
+}
+.reviews-scroll::-webkit-scrollbar-thumb {
+  background: #111111; 
+  border-radius: 10px;
+}
+.reviews-scroll::-webkit-scrollbar-thumb:hover {
+  background: #333333; 
+}
+
+/* =========================================
+   Выпадающее меню
+   ========================================= */
+.dropdown-menu .dropdown-item:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa !important; 
+  color: #111111 !important; 
+}
+
+.dropdown-menu .dropdown-item:active, 
+.dropdown-menu .dropdown-item.active {
+  background-color: #111111 !important; 
+  color: #ffffff !important; 
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================
+   Элементы частых вопросов и формы
+   ========================================= */
+
+/* 1. Плашка "Заполните форму" (alert-info) */
+.alert-info {
+  background-color: #e9ecef !important; /* Более заметный светло-серый фон */
+  border-color: #d3d9df !important;     /* Подходящая рамка */
+  color: #212529 !important;           /* Темно-серый текст */
+}
+
+/* 2. Открытый заголовок в аккордеоне (Частые вопросы) */
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef !important; /* Такой же серый фон для единообразия */
+  color: #111111 !important;            /* Черный текст */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125) !important;
+}
+
+/* 3. Убираем синюю рамку при клике (оставляем черную) */
+.form-control:focus, 
+.form-select:focus,
+.accordion-button:focus {
+  border-color: #111111 !important; 
+  box-shadow: 0 0 0 0.25rem rgba(17, 17, 17, 0.15) !important; 
+}
+
+/* =========================================
+   Плавная прокрутка и кнопка "Наверх"
+   ========================================= */
+html {
+  scroll-behavior: smooth; 
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; 
+  color: #111111; 
+  border: 2px solid #111111; 
+  border-radius: 50%; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  text-decoration: none; 
+}
+
+#backToTop:hover {
+  background-color: #111111; 
+  color: #ffffff; 
+  transform: scale(1.1); 
+}
+
+#backToTop svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* =========================================
+   Стили для логотипа и слогана
+   ========================================= */
+.brand-logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-title {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.brand-slogan {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   Кнопка "Записаться" в каталоге (серая при наведении)
+   ========================================= */
+   
+.btn-book {
+  color: #111111 !important;
+  border: 1px solid #111111 !important;
+  background-color: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover, .btn-book:active {
+  background-color: #6c757d !important; /* Стандартный серый цвет Bootstrap (как у кнопки Очистить) */
+  border-color: #6c757d !important;
+  color: #ffffff !important;
+}
+
+/* =========================================
+   Иконки соцсетей в подвале
+   ========================================= */
+.social-icon {
+  color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый (как text-white-50) */
+  transition: color 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: #ffffff; /* Ярко-белый при наведении */
 }

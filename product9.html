@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный бренд — Muse Studio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light" id="top">
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top shadow-sm"></nav>
+    <div class="container">
+      <a href="index.html" class="brand-logo-link d-flex align-items-center gap-3 text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
+        <div>
+          <span class="brand-title text-white d-block" style="font-size: 1.3rem; font-weight: 800; letter-spacing: 2px;">Muse Studio</span>
+          <span class="brand-slogan text-white d-block" style="font-size: 0.75rem;">Твоя история в каждом кадре</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="studios.html">Залы</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">Услуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="photographers.html">Фотографы</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Полезное</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">О нас</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+              <li><a class="dropdown-item" href="index.html#faq">Частые вопросы</a></li>
+              <li><a class="dropdown-item" href="index.html#reviews">Отзывы клиентов</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">Обратная связь</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-light btn-sm text-dark fw-bold px-3" href="order.html">Запись на съемку</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Главная</a></li>
+        <li class="breadcrumb-item"><a href="catalog.html" class="text-decoration-none text-muted">Услуги</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Личный бренд</li>
+      </ol>
+    </nav>
+
+    <section class="mb-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <img src="images/service-9.jpg" class="img-fluid rounded shadow" alt="Личный бренд" style="object-fit: cover; width: 100%; max-height: 500px;">
+        </div>
+        <div class="col-12 col-lg-6">
+          <span class="badge bg-danger mb-3 px-3 py-2">Новинка</span>
+          <h1 class="display-5 fw-bold mb-3">Личный бренд</h1>
+          <p class="lead text-muted mb-4">Съемка для экспертов, блогеров и бизнес-аккаунтов. Подберем правильный свет и ракурсы, чтобы подчеркнуть ваш профессионализм.</p>
+          <div class="d-flex align-items-center mb-4">
+            <span class="fs-2 fw-bold text-dark me-4">12 000 ₽</span>
+            <span class="text-muted">/ за сессию</span>
+          </div>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="order.html" class="btn btn-primary btn-lg px-4">Записаться на съемку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-5 rounded shadow-sm mb-5">
+      <div class="container">
+        <h2 class="h3 fw-bold text-center mb-5">Что входит в стоимость</h2>
+        <div class="row g-4 text-center">
+          <div class="col-12 col-md-4">
+            <div class="p-4 border-0 h-100">
+              <h3 class="h5 fw-bold">1 фотограф</h3>
+              <p class="text-muted mb-0">Эксперт по коммерческой и имиджевой съемке.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="p-4 border-0 h-100">
+              <h3 class="h5 fw-bold">3 часа</h3>
+              <p class="text-muted mb-0">Много времени на смену локаций, образов и детальную работу.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="p-4 border-0 h-100">
+              <h3 class="h5 fw-bold">100+ фото</h3>
+              <p class="text-muted mb-0">Готовый контент-план для ваших соцсетей на несколько месяцев.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h3 fw-bold mb-4">Детали услуги</h2>
+      <div class="table-responsive shadow-sm">
+        <table class="table table-bordered table-striped align-middle bg-white mb-0">
+          <tbody>
+            <tr><th scope="row" class="w-50 p-3">Длительность съемки</th><td class="p-3">3 часа</td></tr>
+            <tr><th scope="row" class="p-3">Количество фотографов</th><td class="p-3">1 специалист</td></tr>
+            <tr><th scope="row" class="p-3">Обработка фотографий</th><td class="p-3">до 100 ретушированных кадров</td></tr>
+            <tr><th scope="row" class="p-3">Срок готовности</th><td class="p-3">до 10 рабочих дней</td></tr>
+            <tr><th scope="row" class="p-3">Локация</th><td class="p-3">Студия (несколько залов на выбор)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      
+      <div class="row align-items-stretch g-4">
+        
+        <!-- 1. ЛЕВАЯ КОЛОНКА: Логотип и Права -->
+        <div class="col-12 col-lg-4 d-flex flex-column justify-content-between mb-4 mb-lg-0">
+          <a href="index.html" class="brand-logo-link d-inline-flex align-items-center gap-2 text-decoration-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+              <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+              <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+            </svg>
+            <div>
+              <span class="brand-title text-white d-block" style="font-size: 1.2rem; font-weight: 800; letter-spacing: 2px;">Muse Studio</span>
+              <span class="brand-slogan text-white d-block" style="font-size: 0.75rem;">Твоя история в каждом кадре</span>
+            </div>
+          </a>
+          
+          <div class="text-white-50 small mt-4 mt-lg-0">
+            &copy; 2026 Muse Studio. Все права защищены.
+          </div>
+        </div>
+
+        <!-- 2. ЦЕНТРАЛЬНАЯ КОЛОНКА: Навигация и Кнопка -->
+        <div class="col-12 col-lg-3 text-center d-flex flex-column justify-content-end align-items-center mb-4 mb-lg-0">
+          <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 small mb-5">
+            <a href="studios.html" class="text-white-50 text-decoration-none">Залы</a>
+            <a href="catalog.html" class="text-white-50 text-decoration-none">Услуги</a>
+            <a href="photographers.html" class="text-white-50 text-decoration-none">Фотографы</a>
+            <a href="about.html" class="text-white-50 text-decoration-none">О нас</a>
+          </div>
+          <a href="order.html" class="btn btn-light btn-sm text-dark fw-bold px-3 py-1" style="font-size: 0.85rem;">Записаться на съемку</a>
+        </div>
+
+        <!-- 3. ПРАВАЯ КОЛОНКА: Контакты и Соцсети -->
+        <div class="col-12 col-lg-4 offset-lg-1">
+          <h5 class="text-white fw-bold mb-3 mt-1">Контакты</h5>
+          <ul class="list-unstyled text-white-50 small mb-4 d-flex flex-column gap-2">
+            <li><strong>📍 Адрес:</strong> г. Москва, ул. Арбат, д. 10</li>
+            <li><strong>📞 Телефон:</strong> <a href="tel:+79067874323" class="text-white-50 text-decoration-none">+7 (906) 787-43-23</a></li>
+            <li><strong>⏰ Звонки принимаем:</strong> Ежедневно с 10:00 до 21:00</li>
+            <li><strong>✉️ E-mail:</strong> <a href="mailto:info@musestudio.ru" class="text-white-50 text-decoration-none">info@musestudio.ru</a></li>
+          </ul>
+
+          <div class="d-flex gap-3">
+            <a href="#" class="social-icon" aria-label="ВКонтакте">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M15.684 1.354H1.316C.59 1.354 0 1.943 0 2.67v10.66c0 .727.59 1.316 1.316 1.316h14.368c.726 0 1.316-.59 1.316-1.316V2.67c0-.727-.59-1.316-1.316-1.316zM8.353 11.6c-2.663 0-4.724-1.644-4.824-4.364h1.435c.1 2.043 1.144 2.91 1.982 3.09V7.236h1.356v1.772c.83-.09 1.703-.97 1.996-1.772h1.356c-.227 1.148-1.175 2.026-1.853 2.317.678.228 1.727.992 2.133 2.047h-1.492c-.316-.813-1.104-1.444-2.14-1.444z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Telegram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.81-5.239-.002-.062-.006-.265-.141-.338-.135-.073-.341-.044-.478-.024z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Связаться с нами</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted mb-4">Остались вопросы? Напишите нам, и мы обязательно ответим вам в ближайшее время.</p>
+          <form>
+            <div class="mb-3"><label class="form-label">Ваше имя</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Телефон или E-mail</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Ваш вопрос</label><textarea class="form-control" rows="3" required></textarea></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" required><label class="form-check-label">Согласен на обработку данных</label></div>
+          </form>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button><button type="button" class="btn btn-primary">Отправить</button></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#top" id="backToTop" title="Вернуться в начало" aria-label="Наверх">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/></svg>
+  </a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
