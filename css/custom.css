@@ -29,12 +29,6 @@ body {
 .btn-outline-primary { color: #111111 !important; border-color: #111111 !important; }
 .btn-outline-primary:hover { background-color: #111111 !important; color: #ffffff !important; }
 
-/* Бейджи (Хит, Новинка, Скидка) тоже делаем черными для единого стиля */
-.bg-success, .bg-warning, .bg-danger { 
-  background-color: #111111 !important; 
-  color: #ffffff !important; 
-}
-
 /* Картинки (оставил только рабочую высоту 350px) */
 .card-img-top {
   height: 350px;             
@@ -211,4 +205,442 @@ html {
 
 .social-icon:hover {
   color: #ffffff; /* Ярко-белый при наведении */
+}
+
+/* =========================================
+   Виджет чата
+   ========================================= */
+/* Кнопка чата (висит над кнопкой Наверх) */
+.chat-toggle-btn {
+  position: fixed;
+  bottom: 90px; /* Выше кнопки Наверх */
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff; 
+  color: #111111; 
+  border: 2px solid #111111; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1050;
+  transition: all 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+  background-color: #111111; 
+  color: #ffffff; 
+  transform: scale(1.1); 
+}
+
+/* Окно чата */
+.chat-window {
+  position: fixed;
+  bottom: 150px;
+  right: 30px;
+  width: 320px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 1040;
+  display: none; /* Скрыто по умолчанию */
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+/* Шапка чата */
+.chat-header {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-header h6 {
+  margin: 0;
+  font-weight: 700;
+}
+.chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Тело чата (сообщения) */
+.chat-body {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.chat-message.left {
+  background-color: #e9ecef;
+  color: #111111;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+.chat-message.right {
+  background-color: #111111;
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+/* Поле ввода */
+.chat-footer {
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 8px;
+}
+.chat-input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  outline: none;
+}
+.chat-input:focus {
+  border-color: #111111;
+}
+.chat-send {
+  background-color: #111111;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* =========================================
+   Плавная анимация смены темы
+   ========================================= */
+/* Оптимизированная плавная анимация (без лагов) */
+body, 
+.card, 
+.bg-light, 
+.bg-white, 
+.accordion-item, 
+.accordion-button, 
+.table, 
+.modal-content, 
+.chat-window, 
+.chat-body, 
+.chat-footer, 
+.chat-message.left,
+.navbar,
+.dropdown-menu {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+
+/* Исправляем элементы при включении темной темы */
+[data-bs-theme="dark"] .bg-light { 
+  background-color: #121212 !important; /* Темный фон страницы */
+}
+[data-bs-theme="dark"] .bg-white { 
+  background-color: #1e1e1e !important;  /* Темный фон карточек */
+}
+[data-bs-theme="dark"] .card, [data-bs-theme="dark"] .modal-content { 
+  background-color: #1e1e1e !important; 
+  border-color: #333; 
+}
+[data-bs-theme="dark"] .table { 
+  --bs-table-bg: #1e1e1e; 
+  --bs-table-color: #e0e0e0; 
+  --bs-table-hover-bg: #2a2a2a; 
+}
+[data-bs-theme="dark"] .accordion-item { 
+  background-color: #1e1e1e; 
+  border-color: #333; 
+}
+[data-bs-theme="dark"] .accordion-button { 
+  background-color: #1e1e1e; 
+  color: #e0e0e0; 
+}
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) { 
+  background-color: #2a2a2a; 
+  color: white; 
+}
+
+/* Адаптация чата под темную тему */
+[data-bs-theme="dark"] .chat-window { border-color: #333; }
+[data-bs-theme="dark"] .chat-body { background-color: #121212; }
+[data-bs-theme="dark"] .chat-message.left { background-color: #2a2a2a; color: white; }
+[data-bs-theme="dark"] .chat-footer { background-color: #1e1e1e; border-top-color: #333; }
+[data-bs-theme="dark"] .chat-input { background-color: #121212; border-color: #333; color: white; }
+
+/* Иконка переключателя */
+#themeToggleBtn { cursor: pointer; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+#themeToggleBtn:hover { color: white; }
+
+/* =========================================
+   Исправление цвета текста в темной теме
+   ========================================= */
+
+/* Если включена темная тема, принудительно делаем текст со ссылками светлым */
+[data-bs-theme="dark"] .text-dark {
+    color: #f8f9fa !important; /* Почти белый цвет */
+}
+
+/* Делаем приглушенный текст (text-muted) чуть светлее в темной теме */
+[data-bs-theme="dark"] .text-muted {
+    color: #adb5bd !important; /* Светло-серый цвет */
+}
+
+/* Ссылки в карточках и футере, у которых нет классов цвета, тоже делаем светлыми */
+[data-bs-theme="dark"] a:not(.btn):not(.nav-link):not(.dropdown-item) {
+    color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .btn-light.text-dark {
+    color: #111111 !important; /* Возвращаем черный текст для светлых кнопок */
+}
+
+[data-bs-theme="dark"] .btn-light.text-dark:hover {
+    color: #111111 !important;
+    background-color: #e2e6ea !important; /* Чуть темнее при наведении */
+}
+   
+/* Для кнопок "Записаться" в каталоге (btn-book) */
+[data-bs-theme="dark"] .btn-book {
+    color: #f8f9fa !important; /* Белый текст */
+    border-color: #f8f9fa !important; /* Белая рамка */
+}
+[data-bs-theme="dark"] .btn-book:hover {
+    background-color: #f8f9fa !important;
+    color: #111111 !important; /* Черный текст при наведении */
+    border-color: #f8f9fa !important;
+}
+
+/* Для контурных черных кнопок (например, "Перенести" в профиле) */
+[data-bs-theme="dark"] .btn-outline-dark {
+    color: #f8f9fa !important; 
+    border-color: #f8f9fa !important; 
+}
+[data-bs-theme="dark"] .btn-outline-dark:hover {
+    background-color: #f8f9fa !important;
+    color: #111111 !important; 
+    border-color: #f8f9fa !important;
+}
+
+/* Инверсия кнопки Наверх для темной темы */
+[data-bs-theme="dark"] #backToTop {
+    background-color: #1e1e1e !important;
+    color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+}
+[data-bs-theme="dark"] #backToTop:hover {
+    background-color: #f8f9fa !important;
+    color: #111111 !important;
+}
+
+/* Стиль для кнопки чата в темной теме */
+[data-bs-theme="dark"] .chat-toggle-btn {
+  background-color: #1e1e1e !important;
+  color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .chat-toggle-btn:hover {
+  background-color: #f8f9fa !important;
+  color: #111111 !important;
+}
+
+/* =========================================
+   Универсальная адаптация btn-primary для темной темы
+   ========================================= */
+[data-bs-theme="dark"] .btn-primary {
+    background-color: transparent !important; /* Прозрачный фон */
+    border-color: #f8f9fa !important;         /* Белая рамка */
+    color: #f8f9fa !important;                /* Белый текст */
+}
+
+[data-bs-theme="dark"] .btn-primary:hover, 
+[data-bs-theme="dark"] .btn-primary:active {
+    background-color: #f8f9fa !important;     /* Белый фон при наведении */
+    border-color: #f8f9fa !important;
+    color: #111111 !important;                /* Черный текст при наведении */
+}
+
+/* =========================================
+   Личный кабинет в темной теме
+   ========================================= */
+
+/* 1. Исправляем белую шапку таблицы */
+[data-bs-theme="dark"] .table-light th {
+    background-color: #1e1e1e !important; /* Темный фон */
+    color: #f8f9fa !important;            /* Белый текст */
+    border-bottom: 2px solid #333 !important; /* Темная линия */
+}
+
+/* 2. Делаем разделители строк таблицы едва заметными (как в премиум-интерфейсах) */
+[data-bs-theme="dark"] .table > :not(caption) > * > * {
+    border-bottom-color: #333 !important;
+}
+
+/* 3. Делаем плашку внизу темной и аккуратной */
+[data-bs-theme="dark"] .alert-info {
+    background-color: #1e1e1e !important;
+    color: #adb5bd !important;
+    border: 1px solid #333 !important;
+}
+[data-bs-theme="dark"] .alert-info svg, 
+[data-bs-theme="dark"] .alert-info .alert-link {
+    color: #f8f9fa !important;
+}
+
+/* 4. Делаем кнопку "Выйти" чуть более контрастной в темной теме */
+[data-bs-theme="dark"] .btn-outline-danger {
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+}
+[data-bs-theme="dark"] .btn-outline-danger:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* =========================================
+   СТАТУСЫ ЗАКАЗОВ (СВЕТЛАЯ ТЕМА)
+   ========================================= */
+
+/* Статус "Завершен" (Нежный мятный фон, темно-зеленый текст) */
+.badge.bg-success {
+    background-color: #d1e7dd !important;
+    color: #0f5132 !important;
+    border: 1px solid #badbcc;
+}
+
+/* Статус "Ожидает" (Нежный песочный фон, темно-коричневый текст) */
+.badge.bg-warning {
+    background-color: #fff3cd !important;
+    color: #664d03 !important;
+    border: 1px solid #ffecb5;
+}
+
+/* Статус "Отменен" (Строгий светло-серый фон, темно-серый текст) */
+.badge.bg-secondary {
+    background-color: #e2e3e5 !important;
+    color: #41464b !important;
+    border: 1px solid #d3d6d8;
+}
+
+
+/* =========================================
+   СТАТУСЫ ЗАКАЗОВ (ТЕМНАЯ ТЕМА)
+   ========================================= */
+
+/* Статус "Завершен" (Глубокий изумрудный) */
+[data-bs-theme="dark"] .badge.bg-success {
+    background-color: #1e4d3a !important;
+    color: #8cd9b3 !important;
+    border: 1px solid #2b6a50;
+}
+
+/* Статус "Ожидает" (Приглушенный янтарный) */
+[data-bs-theme="dark"] .badge.bg-warning {
+    background-color: #4d3b1e !important;
+    color: #f0c776 !important;
+    border: 1px solid #6a522b;
+}
+
+/* Статус "Отменен" (Графитовый) */
+[data-bs-theme="dark"] .badge.bg-secondary {
+    background-color: #333333 !important; 
+    color: #aaaaaa !important;
+    border: 1px solid #444;
+}
+
+/* =========================================
+   Избранное (Сердечки)
+   ========================================= */
+.card {
+  position: relative; 
+}
+
+.btn-favorite {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #adb5bd; 
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-favorite:hover {
+  transform: scale(1.1);
+  color: #dc3545;
+}
+
+.btn-favorite.active {
+  color: #dc3545 !important; 
+}
+
+[data-bs-theme="dark"] .btn-favorite {
+  background: rgba(30, 30, 30, 0.8);
+  color: #6c757d;
+}
+
+[data-bs-theme="dark"] .btn-favorite:hover {
+  color: #ff6b6b;
+}
+
+[data-bs-theme="dark"] .btn-favorite.active {
+  color: #ff6b6b !important;
+}
+
+/* =========================================
+   Эффект наведения для иконок Избранного и Профиля
+   ========================================= */
+
+/* Иконка Избранного */
+a[href="favorites.html"].nav-link {
+    color: rgba(255, 255, 255, 0.7) !important; /* Полупрозрачный белый */
+    transition: color 0.2s ease;                /* Плавный переход */
+}
+a[href="favorites.html"].nav-link:hover {
+    color: #ffffff !important;                  /* Ярко-белый при наведении */
+}
+
+/* Иконка Профиля */
+a[href="profile.html"].nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: color 0.2s ease;
+}
+a[href="profile.html"].nav-link:hover {
+    color: #ffffff !important;
 }
